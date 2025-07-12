@@ -1,0 +1,37 @@
+### Get trap1
+GET http://localhost:3000/trap1
+Accept: application/json
+
+###
+
+### Create a new item
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+  "name": "New Item"
+}
+
+###
+
+### Get an item by ID
+GET http://localhost:3000/api/items/1
+Accept: application/json
+
+###
+
+
+
+### Update an item by ID
+PUT http://localhost:3000/api/items/12
+Content-Type: application/json
+
+{
+  "name": "Updated Item",
+  "description": "This item was updated"
+}
+
+###
+
+### Delete an item by ID
+DELETE http://localhost:3000/api/items/3
