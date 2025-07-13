@@ -84,7 +84,7 @@ To replicate the benchmark:
 The benchmark results, as discussed in the accompanying technical blog article, highlight the comparative throughput (requests per second) for various HTTP operations. Generally, Hono on Bun demonstrates significantly higher throughput, especially for GET, PUT, and DELETE operations, aligning with claims of Bun's performance advantages and Hono's lightweight design.
 
 For a detailed analysis of the benchmark results and conclusions, please refer to the blog article:
-[Link to Blog Article Here (e.g., Your Blog URL / Benchmarking API Performance)](https://aymenbenzlaouia.vercel.app/blog/benchmarking-express-hono)
+[Link to Blog Article Here (Benchmarking API Performance)](https://aymenbenzlaouia.vercel.app/blog/benchmarking-express-hono)
 
 ---
 
