@@ -26,7 +26,7 @@ export const getItemHandler: AppRouteHandler<GetItemRoute> = (c) => {
     return c.json(row as Item, 200);
   }
 
-  throw new Error("Item not found");
+  return c.json({ error: "Item not found" }, 404);
 };
 
 export const putItemHandler: AppRouteHandler<PutItemRoute> = (c) => {
@@ -38,7 +38,7 @@ export const putItemHandler: AppRouteHandler<PutItemRoute> = (c) => {
     .run(name, id);
 
   if (info.changes === 0) {
-    throw new Error("Item not found");
+    return c.json({ error: "Item not found" }, 404);
   }
   const updatedItem = db
     .prepare("SELECT id, name FROM items WHERE id = ?")
@@ -51,7 +51,7 @@ export const deleteItemHandler: AppRouteHandler<DeleteItemRoute> = (c) => {
 
   const info = db.prepare("DELETE FROM items WHERE id = ?").run(id);
   if (info.changes === 0) {
-    throw new Error("Item not found");
+    return c.json({ error: "Item not found" }, 404);
   }
   return c.body(null, 204);
 };

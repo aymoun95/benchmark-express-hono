@@ -1,5 +1,5 @@
 import { createRoute } from "@hono/zod-openapi";
-import { ItemSchema, ParamsSchema } from "./schema";
+import { ErrorSchema, ItemSchema, ParamsSchema } from "./schema";
 
 export const postItemRoute = createRoute({
   method: "post",
@@ -24,6 +24,14 @@ export const postItemRoute = createRoute({
       },
       description: "Add the item by id",
     },
+    404: {
+      content: {
+        "application/json": {
+          schema: ErrorSchema,
+        },
+      },
+      description: "Error",
+    },
   },
 });
 
@@ -44,6 +52,14 @@ export const getItemRoute = createRoute({
         },
       },
       description: "Retrieve the item by id",
+    },
+    404: {
+      content: {
+        "application/json": {
+          schema: ErrorSchema,
+        },
+      },
+      description: "Error",
     },
   },
 });
@@ -74,6 +90,14 @@ export const putItemRoute = createRoute({
       },
       description: "Update the item by id",
     },
+    404: {
+      content: {
+        "application/json": {
+          schema: ErrorSchema,
+        },
+      },
+      description: "Error",
+    },
   },
 });
 
@@ -89,6 +113,14 @@ export const deleteItemRoute = createRoute({
   responses: {
     204: {
       description: "Delete the item by id",
+    },
+    404: {
+      content: {
+        "application/json": {
+          schema: ErrorSchema,
+        },
+      },
+      description: "Error",
     },
   },
 });

@@ -30,3 +30,11 @@ export const ItemSchema = z
   .openapi("Item");
 
 export type Item = z.infer<typeof ItemSchema>;
+
+export const ErrorSchema = z.object({
+  error: z.string().openapi({
+    type: "string",
+    example: "Item not found",
+    description: "Error message",
+  }),
+});
