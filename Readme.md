@@ -36,7 +36,7 @@ To replicate the benchmark:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/aymoun95/benchmark-express-hono.git](https://github.com/aymoun95/benchmark-express-hono.git)
+    git clone https://github.com/aymoun95/benchmark-express-hono.git
     cd benchmark-express-hono
     ```
 2.  **Install Node.js and Bun:** Ensure you have both runtimes installed on your system.
@@ -44,23 +44,23 @@ To replicate the benchmark:
     * Bun: [https://bun.sh/](https://bun.sh/)
 3.  **Install dependencies for Express.js (Node.js):**
     ```bash
-    cd express-server # (or similar directory name for express app)
+    cd express-server
     npm install
     ```
 4.  **Install dependencies for Hono (Bun):**
     ```bash
-    cd hono-server # (or similar directory name for hono app)
+    cd hono-server
     bun install
     ```
 5.  **Run the Express.js server:**
     ```bash
     cd express-server
-    npm start # (or corresponding start script)
+    npm run dev
     ```
 6.  **Run the Hono server:**
     ```bash
     cd hono-server
-    bun run start # (or corresponding start script)
+    bun run dev
     ```
 7.  **Run Benchmarks (in a separate terminal for each):**
     Ensure one server is running at a time (e.g., stop Express server before starting Hono, or ensure they use different ports).
